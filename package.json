@@ -16,7 +16,8 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
-    "debug": "~2.6.9"
+    "debug": "~2.6.9",
+    "nodemon": "^3.0.1"
   },
   "engines": {
     "node": "14.15.0",
