@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #main
+    .content.pd
+      each blog in obj.blogs
+        .content-article
+          a(href=`/post/${blog.alias}`)
+            h3.px2= blog.title
+          p.py1!= blog.content
+    .leftSide.pd
+      include leftSide

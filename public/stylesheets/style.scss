@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font: 14px Georgia, Times New Roman, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+//Header
+header {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+}
+
+.header {
+  width: 100%;
+  justify-content: space-between;
+
+  &-logo {
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &-search {
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+
+    input {
+      height: 1.5rem;
+      font-size: .8rem;
+    }
+  }
+}
+
+
+/*Main*/
+#main {
+  width: 100%;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+}
+
+/* Content */
+.content {
+  flex-grow: 3;
+
+  &-article {
+
+    h3 {
+
+    }
+  }
+}
+
+/*Left Side*/
+.leftSide {
+  min-width: 20%;
+  max-width: 30%;
+}
+
+/*Padding*/
+.pd {
+  padding: .5rem 1rem;
+}
+
+$padding-values: (0, 0), (1, 0.4rem), (2, 0.8rem), (3, 1rem), (4, 1.2rem), (5, 1.5rem);
+
+@each $index, $padding in $padding-values {
+  .p#{$index} {
+    padding: $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .pt#{$index} {
+    padding-top: $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .pb#{$index} {
+    padding-bottom: $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .pr#{$index} {
+    padding-right: $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .pl#{$index} {
+    padding-left: $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .py#{$index} {
+    padding: 0 $padding 0 $padding;
+  }
+}
+@each $index, $padding in $padding-values {
+  .px#{$index} {
+    padding: $padding 0 $padding 0;
+  }
+}

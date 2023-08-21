@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #main
+    .content.pd
+      .content-article
+        h3.px2= obj.post.title
+        p.py1!= obj.post.content
+    .leftSide.pd
+      include leftSide
