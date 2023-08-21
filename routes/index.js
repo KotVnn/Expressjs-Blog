@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../controllers/post.controller');
 const Cate = require('../controllers/cate.controller');
+const config = require('../configs/index.config');
 
 /* GET home page. */
 router.get('/', async (req, res) => {
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
   }
   const categories = await Cate.allCate();
   if (categories) obj.categories = categories;
-  res.render('index', { title: 'Kot\'s blog', obj });
+  res.render('index', { title: 'Kot\'s blog', obj, config });
 });
 
 router.get('/post/:alias', async (req, res) => {
@@ -36,7 +37,7 @@ router.get('/post/:alias', async (req, res) => {
   }
   const categories = await Cate.allCate();
   if (categories) obj.categories = categories;
-  res.render('post', { title: `${post.title} - Kot\'s blog`, obj });
+  res.render('post', { title: `${post.title} - Kot\'s blog`, obj, config });
 });
 
 router.get('/cate/:alias', async (req, res) => {
@@ -53,7 +54,7 @@ router.get('/cate/:alias', async (req, res) => {
   }
   const categories = await Cate.allCate();
   if (categories) obj.categories = categories;
-  res.render('index', { title: `${rs.cate.title} - Kot\'s blog`, obj });
+  res.render('index', { title: `${rs.cate.title} - Kot\'s blog`, obj, config });
 });
 
 module.exports = router;
