@@ -1,13 +1,15 @@
 block leftSide
-    .pb3
-        h5.pb1 Chuyên mục
-        ul
-          each cat in obj.categories
-            li
-              a(href=`/cate/${cat.alias}`)= cat.title
-    .pb3
-        h5.pb1 Bài viết mới nhất
-        ul
-          each post in obj.latestPost
-            li
-              a(href=`/post/${post.alias}`)= post.title
+    if obj && obj.categories
+        .pb3
+            h5.pb1 Chuyên mục
+            ul
+              each cat in obj.categories
+                li
+                  a(href=`/cate/${cat.alias}`)= cat.title
+    if obj && obj.latestPost
+        .pb3
+            h5.pb1 Bài viết mới nhất
+            ul
+              each post in obj.latestPost
+                li
+                  a(href=`/post/${post.alias}`)= post.title

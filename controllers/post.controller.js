@@ -11,6 +11,7 @@ const getByAlias = alias => {
 
 const getByCate = async aliasCate => {
 	const cate = await Cate.getByAlias(aliasCate);
+	if (!cate) return null;
 	const posts = await db.post.find({categories: {$in:[cate._id]}});
 	return {cate, posts};
 }
