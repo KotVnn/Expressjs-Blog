@@ -13,4 +13,5 @@ html(lang='vi')
     section
       block content
     section
-      include footer
+      if config && config.footer
+        include footer
