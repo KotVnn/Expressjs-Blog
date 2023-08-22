@@ -1,6 +1,6 @@
 {
   "name": "blog-kot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Open source blog by expressjs with pug view engine.",
   "private": false,
   "scripts": {
