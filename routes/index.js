@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     if (categories) obj.categories = categories;
     res.render('index', { title: `${config.title}`, obj, config });
   } else {
-    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null} });
+    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null}, config });
   }
 });
 
@@ -42,7 +42,7 @@ router.get('/post/:alias', async (req, res) => {
     if (categories) obj.categories = categories;
     res.render('post', { title: `${post.title} - ${config.title}`, obj, config });
   } else {
-    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null} });
+    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null}, config });
   }
 });
 
@@ -61,7 +61,7 @@ router.get('/cate/:alias', async (req, res) => {
     if (categories) obj.categories = categories;
     return res.render('index', { title: `${rs.cate.title} - ${config.title}`, obj, config });
   } else {
-    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null} });
+    return res.render('error', { title: `404 - ${config.title}`, message: 'Not found', error: {status: 'Something went wrong !', stack: null}, config });
   }
 });
 
